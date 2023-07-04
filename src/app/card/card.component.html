@@ -1,13 +1,48 @@
 <div class="card">
-  <h1>{{plan.id}}</h1>
-  <p>{{plan.totalDistance}}</p>
-  <p>{{plan.numberOfTracks}}</p>
-  <p>{{plan.headings}}</p>
-  <p>{{plan.swathWidth}}</p>
-  <p>{{plan.grower}}</p>
-  <p>{{plan.farm}}</p>
-  <p>{{plan.operation}}</p>
-  <!-- <p>{{plan.image}}</p> -->
-
+  <div class="header">
+    <mat-icon>info</mat-icon>
+    <div class="verticalStack">
+      2023
+      {{plan.operation | titlecase }}
+      {{plan.swathWidth}}
+    </div>
+    <mat-icon>crop_square</mat-icon>
+  </div>
   <img src="{{plan.image}}" alt="plan image" class="pic">
+  <div class="info-wrapper">
+    <div class="row">
+      <p>Total Distance:</p>
+      <p>{{plan.totalDistance}}</p>
+    </div>
+    <div class="row">
+      <p>Number of Tracks:</p>
+      <p>{{plan.numberOfTracks}}</p>
+    </div>
+    <div class="row">
+      <p>Headings: </p>
+      <p>{{plan.headings}}</p>
+    </div>
+    <div class="row">
+      <p>Swath Width: </p>
+      <p>{{plan.swathWidth}}</p>
+    </div>
+    <div class="row">
+      <p>Grower: </p>
+      <p>{{plan.grower}}</p>
+    </div>
+    <div class="row">
+      <p>Farm:</p>
+      <p> {{plan.farm}}</p>
+    </div>
+
+    <div class="tray">
+      <mat-icon>info</mat-icon>
+      <mat-icon>remove_red_eye</mat-icon>
+      <mat-icon>more_vert</mat-icon>
+      <!-- <span>Info (icon)</span>
+      <span>Eye (icon)</span>
+      <span>... (icon)</span> -->
+    </div>
+  </div>
+
 </div>

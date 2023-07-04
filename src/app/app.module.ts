@@ -9,13 +9,14 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { CardComponent } from './card/card.component';
 import { FilterSectionComponent } from './filter-section/filter-section.component';
 import { PlansService } from './plans.service';
-import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { HttpClientModule } from '@angular/common/http';
+import { MatIconModule } from '@angular/material/icon';
 
 @NgModule({
   declarations: [
     AppComponent,
     CardComponent,
-    FilterSectionComponent
+    FilterSectionComponent,
   ],
   imports: [
     BrowserModule,
@@ -23,6 +24,7 @@ import { HttpClient, HttpClientModule } from '@angular/common/http';
     BrowserAnimationsModule,
     MatSlideToggleModule,
     HttpClientModule,
+    MatIconModule,
   ],
   providers: [PlansService],
   bootstrap: [AppComponent]
