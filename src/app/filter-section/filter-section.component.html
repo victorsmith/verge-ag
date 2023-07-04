@@ -1,6 +1,4 @@
-<h1>VergeAg - Technical Interview</h1>
-
-<!-- <div class="col">
+<div class="col">
   <div class="row">
     <div>
 
@@ -14,14 +12,4 @@
     <button (click)="onToggleFilter(2)">Harvest</button>
     <button (click)="onResetFilter()">Reset</button>
   </div>
-</div> -->
-
-<div>
-  <h2>Filter Section</h2>
-  <app-filter-section></app-filter-section>
-  <div class="grid">
-      <app-card *ngFor="let plan of this.filterService.getFilteredData()" [plan]="plan"></app-card>
-  </div>
 </div>
-<!-- <mat-slide-toggle>Slide me!</mat-slide-toggle> -->
-
