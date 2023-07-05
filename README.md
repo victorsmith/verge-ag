@@ -1,6 +1,12 @@
 # VergeAg
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 16.1.0.
+## Changes to the original project
+
+- Added a new component to display the list of users
+
+
+
+
 
 ## Development server
 

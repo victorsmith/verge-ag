@@ -7,6 +7,9 @@ import { FilterService } from '../filter.service';
   styleUrls: ['./filter-section.component.scss'],
 })
 export class FilterSectionComponent {
+  // Make this an enum
+  sortByMode: string = '';
+  
   constructor(private filteringService: FilterService) {}
 
   onToggleFilter(op: number) {

@@ -10,7 +10,12 @@ import { CardComponent } from './card/card.component';
 import { FilterSectionComponent } from './filter-section/filter-section.component';
 import { PlansService } from './plans.service';
 import { HttpClientModule } from '@angular/common/http';
+
 import { MatIconModule } from '@angular/material/icon';
+import { MatSelectModule } from '@angular/material/select';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+
+
 
 @NgModule({
   declarations: [
@@ -25,6 +30,8 @@ import { MatIconModule } from '@angular/material/icon';
     MatSlideToggleModule,
     HttpClientModule,
     MatIconModule,
+    MatSelectModule,
+    MatDatepickerModule,
   ],
   providers: [PlansService],
   bootstrap: [AppComponent]

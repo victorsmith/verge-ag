@@ -1,27 +1,7 @@
-<h1>VergeAg - Technical Interview</h1>
-
-<!-- <div class="col">
-  <div class="row">
-    <div>
-
-      <h1>Plans</h1>
-      <p>Review analyze and export</p>
-    </div>
-  </div>
-  <div class="row">
-    <button (click)="onToggleFilter(0)">Seeding </button>
-    <button (click)="onToggleFilter(1)">Application</button>
-    <button (click)="onToggleFilter(2)">Harvest</button>
-    <button (click)="onResetFilter()">Reset</button>
-  </div>
-</div> -->
-
+<!-- style="background-color: #8a8a8a98;" -->
 <div>
-  <h2>Filter Section</h2>
   <app-filter-section></app-filter-section>
   <div class="grid">
       <app-card *ngFor="let plan of this.filterService.getFilteredData()" [plan]="plan"></app-card>
   </div>
 </div>
-<!-- <mat-slide-toggle>Slide me!</mat-slide-toggle> -->
-

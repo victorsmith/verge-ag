@@ -1,5 +1,8 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { Observable } from 'rxjs';
+
+import { Plan } from './types/Plan';
 
 @Injectable({
   providedIn: 'root',
@@ -9,9 +12,7 @@ export class PlansService {
 
   constructor(private http: HttpClient) {}
 
-  getPlans() {
+  getPlans(): Observable<any> {
     return this.http.get(this.url);
   }
-
-
 }
