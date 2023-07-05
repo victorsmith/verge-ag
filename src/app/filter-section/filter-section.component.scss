@@ -4,14 +4,24 @@ p {
   padding: 0;
 }
 
+h3 {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+p {
+  font-size: 1rem;
+  font-weight: normal;
+}
+
 .col {
   display: flex;
   flex-direction: column;
-  border: 1px solid red;
   justify-content: center;
   // align-items: center;
   margin: 10px 20px;
-  background-color: rgb(6, 159, 159);
+  background-color: rgb(204, 213, 213);
+  padding: 20px;
   // drop shadow
   box-shadow: 0px 0px 5px 0px rgba(189, 189, 189, 0.75);
   
@@ -19,7 +29,7 @@ p {
 
 .row {
   display: flex;
-  border: 1px solid blue;
+  // border: 1px solid blue;
   padding: 10px 0;
   .icon-grid {
     display: grid;
@@ -32,7 +42,6 @@ p {
 .item-block {
   display: flex;
   flex-direction: column;
-  border: 1px solid green;
   justify-content: center;
   margin: 0 10px 0 0;
 
@@ -50,7 +59,7 @@ p {
   text-align: center; /* Center the text horizontally */
   text-decoration: none; /* Remove the default text underline */
   display: inline-block; /* Display the button as an inline element */
-  font-size: 16px; /* Set the font size */
+  font-size: 12px; /* Set the font size */
   cursor: pointer; /* Change the cursor to a pointer on hover */
   border-radius: 4px; /* Add rounded corners */
 }
@@ -63,7 +72,7 @@ p {
   text-align: center; /* Center the text horizontally */
   text-decoration: none; /* Remove the default text underline */
   display: inline-block; /* Display the button as an inline element */
-  font-size: 16px; /* Set the font size */
+  font-size: 12px; /* Set the font size */
   cursor: pointer; /* Change the cursor to a pointer on hover */
   border-radius: 4px; /* Add rounded corners */
 }
