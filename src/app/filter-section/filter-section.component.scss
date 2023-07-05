@@ -40,3 +40,35 @@ p {
     height: 100%;
   }
 }
+
+
+.styled-button {
+  background-color: #4CAF50; /* Set the background color */
+  border: none; /* Remove the default button border */
+  color: white; /* Set the text color */
+  padding: 10px 20px; /* Add some padding */
+  text-align: center; /* Center the text horizontally */
+  text-decoration: none; /* Remove the default text underline */
+  display: inline-block; /* Display the button as an inline element */
+  font-size: 16px; /* Set the font size */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+.selected-button {
+  background-color: #000000;
+  border: none; /* Remove the default button border */
+  color: white; /* Set the text color */
+  padding: 10px 20px; /* Add some padding */
+  text-align: center; /* Center the text horizontally */
+  text-decoration: none; /* Remove the default text underline */
+  display: inline-block; /* Display the button as an inline element */
+  font-size: 16px; /* Set the font size */
+  cursor: pointer; /* Change the cursor to a pointer on hover */
+  border-radius: 4px; /* Add rounded corners */
+}
+
+/* Change the background color on hover */
+.styled-button:hover {
+  background-color: #45a049;
+}

@@ -4,31 +4,17 @@
       <h3>Plans</h3>
       <p>Review analyze and export</p>
     </div>
-    <div class="item-block">
-      <input placeholder="Search Path Plans">
-    </div>
   </div>
 
   <div class="row">
     <div class="icon-grid" style="margin-right: 15px;">
-      <button (click)="setCategory('seeding')">Seeding </button>
-      <button (click)="setCategory('application')">Application</button>
-      <button (click)="setCategory('harvest')">Harvest</button>
-      <button (click)="onResetFilter()">Reset</button>
+      <button [ngClass]="category == 'seeding' ? 'selected-button' : 'styled-button'" (click)="setCategory('seeding')">Seeding </button>
+      <button [ngClass]="category == 'application' ? 'selected-button' : 'styled-button'" (click)="setCategory('application')">Application</button>
+      <button [ngClass]="category == 'harvest' ? 'selected-button' : 'styled-button'" (click)="setCategory('harvest')">Harvest</button>
+      <button class="styled-button" (click)="onResetFilter()">Reset</button>
     </div>
     <div>
       <input placeholder="Text Search" (keyup)="setTextSearch()" [(ngModel)]="textSearch">
     </div>
-  
-    <button>
-      Reset
-    </button>
   </div>
-
-  <div class="row">
-    <button>Share</button>
-    <button>Export</button>
-    <button>Compare</button>
-  </div>
-
 </div>
