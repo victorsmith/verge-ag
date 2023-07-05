@@ -2,6 +2,6 @@
 <div>
   <app-filter-section></app-filter-section>
   <div class="grid">
-      <app-card *ngFor="let plan of this.filterService.getFilteredData()" [plan]="plan"></app-card>
+      <app-card *ngFor="let plan of filteredPlans" [plan]="plan"></app-card>
   </div>
 </div>

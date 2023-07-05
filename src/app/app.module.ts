@@ -15,6 +15,7 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatSelectModule } from '@angular/material/select';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 
+import { FormsModule } from '@angular/forms';
 
 
 @NgModule({
@@ -32,6 +33,7 @@ import { MatDatepickerModule } from '@angular/material/datepicker';
     MatIconModule,
     MatSelectModule,
     MatDatepickerModule,
+    FormsModule
   ],
   providers: [PlansService],
   bootstrap: [AppComponent]

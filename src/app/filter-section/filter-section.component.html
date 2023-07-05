@@ -11,27 +11,15 @@
 
   <div class="row">
     <div class="icon-grid" style="margin-right: 15px;">
-      <button (click)="onToggleFilter(0)">Seeding </button>
-      <button (click)="onToggleFilter(1)">Application</button>
-      <button (click)="onToggleFilter(2)">Harvest</button>
+      <button (click)="setCategory('seeding')">Seeding </button>
+      <button (click)="setCategory('application')">Application</button>
+      <button (click)="setCategory('harvest')">Harvest</button>
       <button (click)="onResetFilter()">Reset</button>
     </div>
-    <div class="item-block">
-      <h3>Sort By</h3>
-      <mat-form-field>
-        <mat-label>Select an option</mat-label>
-        <mat-select [(value)]="sortByMode">
-          <mat-option>None</mat-option>
-          <mat-option value="option1">Option 1</mat-option>
-          <mat-option value="option2">Option 2</mat-option>
-          <mat-option value="option3">Option 3</mat-option>
-        </mat-select>
-      </mat-form-field>
+    <div>
+      <input placeholder="Text Search" (keyup)="setTextSearch()" [(ngModel)]="textSearch">
     </div>
-    <div class="item-block">
-      <h3>Created Date</h3>
-
-    </div>
+  
     <button>
       Reset
     </button>

@@ -2,31 +2,25 @@ import { Injectable } from '@angular/core';
 import { Plan } from './types/Plan';
 import { PlansService } from './plans.service';
 import { Subject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root',
 })
 export class FilterService {
+  original: any;
+  filteredData: Plan[] = [];
 
-  url: string = 'https://run.mocky.io/v3/e4ca79b4-83cd-4dbe-9bca-f9b966b458eb';
-
-  original: Plan[];
-  filteredData: Plan[];
-
-  categoryFilterSubject: Subject<string> = new Subject<string>();
-  searchFilterSubject: Subject<string> = new Subject<string>();
+  filterSubject: Subject<{ text: string; category: string }> = new Subject<{
+    text: string;
+    category: string;
+  }>();
 
   constructor(private plansService: PlansService, private http: HttpClient) {
-    this.plansService.getPlans().subscribe((data: any) => {
-      console.log(data);
-      this.original = data.plans;
-      this.filteredData = this.original;
-    });
-  }
-
-  fetchPosts() {
-    this.http.get(this.url).subscribe((plans: Plan) => {
+    this.plansService.getPlans().subscribe(({ plans }) => {
+      console.log(plans);
       this.original = plans;
+      this.filteredData = this.original;
     });
   }
 
@@ -34,43 +28,35 @@ export class FilterService {
     return this.filteredData;
   }
 
-  updateFilteredData(newFilterValues: any) {
-    // logic here
-    this.filteredData = this.original;
-    if (newFilterValues.seeding) {
-      this.filteredData = this.filteredData.filter(
-        (plan) => plan.operation == 'seeding'
-      );
-    } else if (newFilterValues.application) {
-      this.filteredData = this.filteredData.filter(
-        (plan) => plan.operation == 'application'
-      );
-    } else if (newFilterValues.harvest) {
-      this.filteredData = this.filteredData.filter(
-        (plan) => plan.operation == 'harvest'
+  filterData(data: any, text: string, category: string) {
+    let filteredData = data;
+    if (category) {
+      filteredData = filteredData.filter(
+        (plan: Plan) => plan.operation == category
       );
     }
+    if (text) {
+      filteredData = filteredData.filter(
+        (plan: Plan) =>
+          // only checking gorwer, farm, and operation
+          // for now to keep it simple
+          plan.grower.toLowerCase().includes(text.toLowerCase()) ||
+          plan.farm.toLowerCase().includes(text.toLowerCase()) ||
+          plan.operation.toLowerCase().includes(text.toLowerCase())
+      );
+    }
+    return filteredData;
   }
 
   resetFilteredData() {
     this.filteredData = this.original;
   }
 
-  // Subject Methods
-
-  getFilterSubjects() {
-    return {
-      categoryFilterSubject: this.categoryFilterSubject,
-      searchFilterSubject: this.searchFilterSubject,
-    };
+  getFilterSubject() {
+    return this.filterSubject;
   }
 
-  updateCategoryFilter(category: string) {
-    this.categoryFilterSubject.next(category);
+  updateFilter(filterObject: { text: string; category: string }) {
+    this.filterSubject.next(filterObject);
   }
-
-  updateSearchFilter(searchTerm: string) {
-    this.searchFilterSubject.next(searchTerm);
-  }
-
 }
